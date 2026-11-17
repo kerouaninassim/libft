@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkerouan <keruaninassim@gmail.com>         +#+  +:+       +#+        */
+/*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 13:25:47 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/13 16:54:52 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:24:17 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nblen(long int nb)
+static int	ft_nblen(long int nb)
 {
 	int			len;
 	long int	n;
@@ -33,7 +33,7 @@ int	ft_nblen(long int nb)
 	return (len);
 }
 
-void	ft_isnotpos(char *ptr, long int n)
+static void	ft_isnotpos(char *ptr, long int n)
 {
 	int	len;
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkerouan <keruaninassim@gmail.com>         +#+  +:+       +#+        */
+/*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:05:01 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/13 17:02:46 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:25:12 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countwords(char const *str, char c)
+static int	ft_countwords(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -31,7 +31,7 @@ int	ft_countwords(char const *str, char c)
 	return (count);
 }
 
-char	**ft_freelock(char **s, int size)
+static char	**ft_freelock(char **s, int size)
 {
 	size -= 1;
 	while (size >= 0)
@@ -43,7 +43,7 @@ char	**ft_freelock(char **s, int size)
 	return (NULL);
 }
 
-int	ft_countlettres(char const *str, char c)
+static int	ft_countlettres(char const *str, char c)
 {
 	int	i;
 
@@ -53,7 +53,7 @@ int	ft_countlettres(char const *str, char c)
 	return (i);
 }
 
-char	*ft_mallocked(char const *str, char c)
+static char	*ft_mallocked(char const *str, char c)
 {
 	int		i;
 	char	*ptr;
