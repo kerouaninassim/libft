@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkerouan <keruaninassim@gmail.com>         +#+  +:+       +#+        */
+/*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:26:28 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/13 17:20:50 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/17 19:07:33 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,18 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		*ptr;
-	size_t	i;
-	size_t	pasta;
+	void	*ptr;
+	size_t	total;
 
 	if (size == 0)
-	{
-		ptr = malloc(1);
-		ptr[0] = 0;
-		return (ptr);
-	}
-	pasta = nmemb * size;
-	if (nmemb != pasta / size && size != pasta / nmemb)
+		return (malloc(0));
+	total = nmemb * size;
+	if (nmemb != total / size)
 		return (NULL);
-	i = 0;
-
 	ptr = malloc(nmemb * size);
 	if (!ptr)
-		return (0);
-	while (i < size)
-	{
-		ptr[i] = 0;
-		i++;
-	}
+		return (NULL);
+	ft_bzero(ptr, total);
 	return (ptr);
 }
 

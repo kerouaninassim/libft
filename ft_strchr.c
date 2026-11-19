@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkerouan <keruaninassim@gmail.com>         +#+  +:+       +#+        */
+/*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 14:49:59 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/13 14:36:47 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:44:34 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	char	a;
 
 	a = c;
-
 	while (*s != a && *s)
 	{
 		s++;

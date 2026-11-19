@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkerouan <keruaninassim@gmail.com>         +#+  +:+       +#+        */
+/*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 10:07:37 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/12 18:19:03 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/19 12:47:50 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,23 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
+	size_t	little_len;
 
+	little_len = ft_strlen((char *)little);
 	i = 0;
-	while (big[i] && i < len)
+	if (little_len == 0)
+		return ((char *)big);
+	while (i < len && (i + little_len <= len) && big[i])
 	{
 		j = 0;
 		if (big[i] == little[j])
 		{
-			while (big[i] == little[j] && big[i] && little[j] && i < len)
-			{
-				i++;
-				j ++;
-			}
+			while ((i + j) < len && big[i + j] == little[j] && big[i + j]
+				&& little[j])
+				j++;
 		}
 		if (little[j] == 0)
-			return (&((char *)big)[i - j]);
+			return (&((char *)big)[i]);
 		i++;
 	}
 	return (0);

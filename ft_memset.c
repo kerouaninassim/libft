@@ -6,10 +6,12 @@
 /*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 09:37:08 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/12 18:00:47 by nkerouan         ###   ########lyon.fr   */
+/*   Updated: 2026/11/17 13:43:01 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;

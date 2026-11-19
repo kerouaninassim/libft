@@ -1,7 +1,6 @@
 NAME= libft.a
 CC= cc
-CFLAG= -Wall -Wextra -Werror
-INC= -I includes
+CFLAGS= -Wall -Wextra -Werror
 
 SRC= ft_isalpha.c \
      ft_isdigit.c \
@@ -50,8 +49,8 @@ SRC= ft_isalpha.c \
 
 OBJ= $(SRC:.c=.o)
 
-%.o:%.c libft.h MAKEFILE
-	$(CC) $(CFLAG) $(INC) -c $< -o $@
+%.o:%.c libft.h Makfile
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
@@ -64,7 +63,7 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: clean fclean all
+re: fclean all
 
 .PHONY: all clean fclean re
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkerouan <keruaninassim@gmail.com>         +#+  +:+       +#+        */
+/*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:47:47 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/13 15:09:11 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/18 19:22:24 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char	*ft_strdup(const char *s)
 		ptr[i] = s[i];
 		i++;
 	}
+	ptr[i] = 0;
 	return (ptr);
 }
 /*int	main(void)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkerouan <keruaninassim@gmail.com>         +#+  +:+       +#+        */
+/*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 11:27:28 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/13 16:51:30 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:41:57 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (0 < n--)
 			d[n] = s[n];
-
 	}
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 13:25:47 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/17 13:24:17 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/19 11:25:01 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ static int	ft_nblen(long int nb)
 	if (n < 0)
 	{
 		n = -n;
+		len++;
 	}
 	while (n > 0)
 	{
 		n /= 10;
-		len ++;
+		len++;
 	}
 	return (len);
 }
@@ -37,13 +38,13 @@ static void	ft_isnotpos(char *ptr, long int n)
 {
 	int	len;
 
-	len = ft_nblen(n);
+	len = ft_nblen(n) - 1;
 	if (n < 0)
 	{
 		ptr[0] = '-';
 		n = -n;
 	}
-	while (ptr[len] != '-')
+	while (len > 0)
 	{
 		ptr[len] = (n % 10) + 48;
 		n /= 10;
@@ -51,18 +52,14 @@ static void	ft_isnotpos(char *ptr, long int n)
 	}
 }
 
-
-
 char	*ft_itoa(int n)
 {
-	char			*ptr;
-	long int		nb;
-	int				len;
+	char		*ptr;
+	long int	nb;
+	int			len;
 
 	nb = n;
 	len = ft_nblen(nb);
-	if (nb < 0)
-		len++;
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (0);
@@ -81,7 +78,6 @@ char	*ft_itoa(int n)
 	}
 	return (ptr);
 }
-
 
 /*int	main(void)
 {

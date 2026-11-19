@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkerouan <keruaninassim@gmail.com>         +#+  +:+       +#+        */
+/*   By: nkerouan <nkerouan@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 13:39:21 by nkerouan          #+#    #+#             */
-/*   Updated: 2026/11/13 13:48:30 by nkerouan         ###   ########.fr       */
+/*   Updated: 2026/11/19 11:56:11 by nkerouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 	size_t	j;
 	size_t	e;
 
-	i = 0;
+	i = ft_strlen(src);
 	j = 0;
 	e = 0;
-	while (src[i])
-		i++;
-	while (dest[j])
+	while (j < destsize && dest[j])
 		j++;
 	if (destsize > j)
 	{
-		while (src[e] && e < (destsize - j - 1))
+		while (e < (destsize - j - 1) && src[e])
 		{
 			dest[j + e] = src[e];
 			e++;
@@ -36,7 +34,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 		return (i + j);
 	}
 	return (destsize + i);
-
 }
 
 /*#include <bsd/string.h>
